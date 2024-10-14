@@ -1,0 +1,109 @@
+#ball {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50px;
+    display: none;
+    margin-top: 20px;
+    position: absolute;
+    top: 175px;
+}
+
+#btnToggle {
+    width: 130px;
+    height: 45px;
+    color: black;
+    background-color: white;
+    font-size: 18px;
+    border-radius: 15px;
+}
+
+body {
+    background-color: black;
+    cursor: crosshair;
+}
+
+#timer {
+    border-radius: 5px;
+    background-color: white;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+#h1 {
+    color: white;
+}
+
+#clickCounter {
+    width: 110px;
+    height: 30px;
+    color: black;
+    background-color: white;
+    font-size: 25px;
+    border-radius: 6px;
+    top: 65px;
+    right: 15px;
+    position: absolute;
+    display: none;
+}
+
+#titleButton {
+    width: 700px;
+    height: 500px;
+    font-size: 125px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+#body2 {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#changeBall {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: white;
+    color: black;
+    top: 60px;
+    left: 140px;
+    position: absolute;
+    border-radius: 15px;
+}
+
+#highScore {
+    font-size: 24px;
+    color: white;
+    margin: 20px;
+    display: block;
+}
+
+#changeBall2 {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: white;
+    color: black;
+    top: 60px;
+    left: 300px;
+    position: absolute;
+    border-radius: 15px;
+}
