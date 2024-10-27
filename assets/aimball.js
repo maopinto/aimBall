@@ -9,6 +9,15 @@ let shapeIndex = 0;
 let highScore = 0;
 let shapeIndex2 = 0;
 
+
+window.onload = function () {
+    const savedHighScore = localStorage.getItem('highScore');
+    if (savedHighScore) {
+        highScore = parseInt(savedHighScore, 10);
+        document.getElementById('highScore').innerText = 'High Score: ' + highScore;
+    }
+};
+
 function toggle() {
     const ball = document.getElementById(ballElemId);
     const btnToggleElem = document.getElementById(btnToggleId);
@@ -54,6 +63,13 @@ function moveBall() {
 
     clickCounter++;
     document.getElementById('clickCounter').innerText = 'points : ' + clickCounter;
+
+
+    if (clickCounter > highScore) {
+        highScore = clickCounter;
+        localStorage.setItem('highScore', highScore);
+        document.getElementById('highScore').innerText = 'High Score: ' + highScore;
+    }
 }
 
 function getRandomNumber(max) {
@@ -88,16 +104,7 @@ function hideBall() {
     const btnToggleElem = document.getElementById(btnToggleId);
 
     isBallVisible = false;
-
-
-
     btnToggleElem.innerText = "show the ball";
-
-
-    if (clickCounter > highScore) {
-        highScore = clickCounter;
-        document.getElementById('highScore').innerText = 'high score: ' + highScore;
-    }
 
     resetPoints();
 }
@@ -141,13 +148,13 @@ function changeBallStyel() {
 
     if (shapeIndex === 0) {
         ball.style.borderRadius = '50px';
-
     } else if (shapeIndex === 1) {
         ball.style.borderRadius = '0px';
-
     } else if (shapeIndex === 2) {
         ball.style.borderRadius = '50% 50% 0 0';
     }
+
+
 
     showBall();
     shapeIndex = (shapeIndex + 1) % 3;
@@ -158,18 +165,17 @@ function changeBallColor() {
 
     if (shapeIndex2 === 0) {
         ball.style.backgroundColor = 'white';
-    }
-
-    else if (shapeIndex2 === 1) {
+    } else if (shapeIndex2 === 1) {
         ball.style.backgroundColor = 'blue';
-    }
-
-    else if (shapeIndex2 === 2) {
+    } else if (shapeIndex2 === 2) {
         ball.style.backgroundColor = 'green';
+    }
+    else if (shapeIndex2 === 3) {
+        ball.style.backgroundColor = 'yellow'
     }
 
     showBall();
-    shapeIndex2 = (shapeIndex2 + 1) % 3;
+    shapeIndex2 = (shapeIndex2 + 1) % 4;
 }
 
 function hideColorBtn() {
@@ -223,4 +229,3 @@ function showScore() {
     const score = document.getElementById("highScore");
     score.style.display = 'block';
 }
-
